@@ -18,15 +18,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x
+          python-version: 3.8  # 锁定 Python 版本
 
       - name: Install dependencies
-        run: pip install selenium requests futures eventlet
+        run: pip install -r requirements.txt  # 安装依赖项
 
       - name: Run iptv
         run: python ${{ github.workspace }}/iptv.py
 
-        
       - name: 提交
         run: |
           git config --local user.email "253132876@qq.com"
@@ -34,5 +33,4 @@ jobs:
           git add .
           git commit *.txt -m "Add generated file"
           git commit *.m3u -m "Add generated file"
-          #git pull --rebase
           git push -f
