@@ -1,4 +1,5 @@
-
+import eventlet
+eventlet.monkey_patch()
 import time
 import concurrent.futures
 from selenium import webdriver
@@ -8,8 +9,7 @@ import re
 import os
 import threading
 from queue import Queue
-import eventlet
-eventlet.monkey_patch()
+
 
 
 urls = [
