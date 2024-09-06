@@ -1,4 +1,4 @@
-selenium==3.141.0
-requests==2.26.0
-futures==3.1.1
-eventlet==0.31.0
+selenium==4.23.1
+requests==2.32.3
+futures==3.0.5
+eventlet==0.36.0
