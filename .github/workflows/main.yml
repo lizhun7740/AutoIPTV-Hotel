@@ -18,10 +18,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.12.5  # 锁定 Python 版本
+          python-version: 3.12.5
+
+      - name: Install Python distutils
+        run: sudo apt-get install python3-distutils
 
       - name: Install dependencies
-        run: pip install -r requirements.txt  # 安装依赖项
+        run: pip install selenium requests futures eventlet
 
       - name: Run iptv
         run: python ${{ github.workspace }}/iptv.py
